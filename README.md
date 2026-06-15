@@ -53,4 +53,4 @@ We experimented with various models for both Classification (predicting Attentio
    ```
 
 ## Deployment
-The application is deployed using Streamlit Community Cloud. You can access it here: [Insert Deployed URL]
+The application is deployed using Streamlit Community Cloud. You can access it here: [Live Demo: Sleep Disruption & Attention Fragmentation](https://sleep-disruption-analysis.streamlit.app)

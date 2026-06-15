@@ -168,7 +168,7 @@ if submitted:
         # Regression Prediction
         reg_input = master_df[reg_features]
         reg_scaled = pd.DataFrame(reg_scaler.transform(reg_input), columns=reg_features)
-        sleep_quality_pred = max(0, min(100, reg_model.predict(reg_scaled)[0]))
+        sleep_quality_pred = max(0, min(10, reg_model.predict(reg_scaled)[0]))
         
         # Classification Prediction
         clf_input = master_df[clf_features]
@@ -182,10 +182,10 @@ if submitted:
         rc1, rc2 = st.columns(2)
         
         with rc1:
-            st.metric(label="Predicted Sleep Quality", value=f"{sleep_quality_pred:.1f} / 100")
-            if sleep_quality_pred >= 80:
+            st.metric(label="Predicted Sleep Quality", value=f"{sleep_quality_pred:.1f} / 10")
+            if sleep_quality_pred >= 8.0:
                 st.success("Excellent sleep quality expected. Keep up your healthy routines.")
-            elif sleep_quality_pred >= 60:
+            elif sleep_quality_pred >= 6.0:
                 st.warning("Moderate sleep quality. Consider reducing screen time or caffeine.")
             else:
                 st.error("Poor sleep quality expected. High risk of sleep disruption.")
